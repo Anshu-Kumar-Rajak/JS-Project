@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+
+<body id="slide"
+    style="background-image:url(gradient.jpg); background-repeat: no-repeat; background-size: cover;">
+    <div class="container pt-5 ">
+        <div class="row">
+            <div class="col-lg-5 col-md-6 col-sm-4 mt-5 mx-auto bg-white bg-opacity-25 p-0 row">
+                <!--slide 1-->
+                <div class="col-lg-12 " id="first">
+                    <div  class="border-1  rounded-1">
+                        <h1 class="text-center fw-bolder pt-3">
+                            Student admission
+                        </h1>
+                        <div class="row px-4">
+                            <div class="col-lg-12 px-3 pb-2">
+                                <label class="form-label">Student name </label>
+                                <input class="form-control" type="text" name="sname" value="" id="sname" autocomplete="off">
+                                <span id="err_sname"></span>
+                            </div>
+                            <div class="col-lg-12 p-lg-3">
+                                <label class="form-label">Father's Name </label>
+                                <input class="form-control" type="text" name="fname" value="" id="fname"  autocomplete="off">
+                                <span id="err_fname"></span>
+                            </div>
+                            <div class="col-lg-12 p-lg-3">
+                                <label class="form-label">Mother's Name</label>
+                                <input class="form-control" type="text" name="mname" value="" id="mname"  autocomplete="off">
+                                <span id="err_mname"></span>
+                            </div>
+                            <div class="col-lg-12 px-3 ">
+                                <label class="form-label pe-1">Gender :</label><br>
+                                <input type="radio" class="form-check-input" name="gender" value="male" id="Male" >
+                                <label for="male" class="pe-2">Male</label>
+                                <input type="radio" class="form-check-input" name="gender" value="female" id="Female">
+                                <label for="female" class="pe-2">Female</label>
+                                <input type="radio" class="form-check-input" name="gender" value="Others" id="Other">
+                                <label>Others</label>
+                                <span id="err_gender"></span>
+                            </div>
+                            <div class="col-lg-12 p-lg-3">
+                                <label class="form-label">Email</label>
+                                <input class="form-control" type="text" name="email" value="" id="email"  autocomplete="off">
+                                <span id="err_email"></span>
+                            </div>
+                            <div class="col-lg-12 p-lg-3">
+                                <label class="form-label">Date of Birth</label>
+                                <input class="form-control" id="dob" type="date" name="dob" value=""  autocomplete="off">
+                                <span id="err_dob"></span>
+                            </div>
+                            <div class="col-lg-12 p-lg-3">
+                                <label class="form-label">Phone Number</label>
+                                <input class="form-control" id="phone" type="text" name="phone"  autocomplete="off" value="" onkeypress='return restrictAlphabets(event)'>
+                                <span id="err_phone"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button onclick="validateslidefirst();" class="btn  text-white w-auto m-3"
+                            style="background-color: rgb(202, 74, 207);">Next</button>
+                    </div>
+                </div>
+                <!--slide 2-->
+                <div class="col-lg-12 d-none " id="second">
+                    <form action="" class="border-1  rounded-1">
+                        <h1 class="text-center fw-bolder pt-5 pb-3">
+                            Residence Details
+                        </h1>
+                        <div class=" row px-4">
+                            <div class="col-lg-12 p-lg-3">
+                                <label class="form-label">Country</label>
+                                <select class="form-select" name="country" value="" id="country" >
+                                    <option value="select">Select Country</option>
+                                    <option value="Afghanistan">Afghanistan</option>
+                                    <option value="Albania">Albania</option>
+                                    <option value="Algeria">Algeria</option>
+                                    <option value="American Samoa">American Samoa</option>
+                                    <option value="Andorra">Andorra</option>
+                                    <option value="Angola">Angola</option>
+                                    <option value="Anguilla">Anguilla</option>
+                                    <option value="Antartica">Antarctica</option>
+                                    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Armenia">Armenia</option>
+                                    <option value="Aruba">Aruba</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Azerbaijan">Azerbaijan</option>
+                                    <option value="Bahamas">Bahamas</option>
+                                    <option value="Bahrain">Bahrain</option>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="Barbados">Barbados</option>
+                                    <option value="Belarus">Belarus</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="Belize">Belize</option>
+                                    <option value="Benin">Benin</option>
+                                    <option value="Bermuda">Bermuda</option>
+                                    <option value="Bhutan">Bhutan</option>
+                                    <option value="Bolivia">Bolivia</option>
+                                    <option value="Bosnia and Herzegowina">Bosnia and Herzegowina</option>
+                                    <option value="Botswana">Botswana</option>
+                                    <option value="Bouvet Island">Bouvet Island</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="British Indian Ocean Territory">British Indian Ocean Territory
+                                    </option>
+                                    <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                    <option value="Bulgaria">Bulgaria</option>
+                                    <option value="Burkina Faso">Burkina Faso</option>
+                                    <option value="Burundi">Burundi</option>
+                                    <option value="Cambodia">Cambodia</option>
+                                    <option value="Cameroon">Cameroon</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Cape Verde">Cape Verde</option>
+                                    <option value="Cayman Islands">Cayman Islands</option>
+                                    <option value="Central African Republic">Central African Republic</option>
+                                    <option value="Chad">Chad</option>
+                                    <option value="Chile">Chile</option>
+                                    <option value="China">China</option>
+                                    <option value="Christmas Island">Christmas Island</option>
+                                    <option value="Cocos Islands">Cocos (Keeling) Islands</option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="Comoros">Comoros</option>
+                                    <option value="Congo">Congo</option>
+                                    <option value="Congo">Congo, the Democratic Republic of the</option>
+                                    <option value="Cook Islands">Cook Islands</option>
+                                    <option value="Costa Rica">Costa Rica</option>
+                                    <option value="Cota D'Ivoire">Cote d'Ivoire</option>
+                                    <option value="Croatia">Croatia (Hrvatska)</option>
+                                    <option value="Cuba">Cuba</option>
+                                    <option value="Cyprus">Cyprus</option>
+                                    <option value="Czech Republic">Czech Republic</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Djibouti">Djibouti</option>
+                                    <option value="Dominica">Dominica</option>
+                                    <option value="Dominican Republic">Dominican Republic</option>
+                                    <option value="East Timor">East Timor</option>
+                                    <option value="Ecuador">Ecuador</option>
+                                    <option value="Egypt">Egypt</option>
+                                    <option value="El Salvador">El Salvador</option>
+                                    <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                    <option value="Eritrea">Eritrea</option>
+                                    <option value="Estonia">Estonia</option>
+                                    <option value="Ethiopia">Ethiopia</option>
+                                    <option value="Falkland Islands">Falkland Islands (Malvinas)</option>
+                                    <option value="Faroe Islands">Faroe Islands</option>
+                                    <option value="Fiji">Fiji</option>
+                                    <option value="Finland">Finland</option>
+                                    <option value="France">France</option>
+                                    <option value="France Metropolitan">France, Metropolitan</option>
+                                    <option value="French Guiana">French Guiana</option>
+                                    <option value="French Polynesia">French Polynesia</option>
+                                    <option value="French Southern Territories">French Southern Territories</option>
+                                    <option value="Gabon">Gabon</option>
+                                    <option value="Gambia">Gambia</option>
+                                    <option value="Georgia">Georgia</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Ghana">Ghana</option>
+                                    <option value="Gibraltar">Gibraltar</option>
+                                    <option value="Greece">Greece</option>
+                                    <option value="Greenland">Greenland</option>
+                                    <option value="Grenada">Grenada</option>
+                                    <option value="Guadeloupe">Guadeloupe</option>
+                                    <option value="Guam">Guam</option>
+                                    <option value="Guatemala">Guatemala</option>
+                                    <option value="Guinea">Guinea</option>
+                                    <option value="Guinea-Bissau">Guinea-Bissau</option>
+                                    <option value="Guyana">Guyana</option>
+                                    <option value="Haiti">Haiti</option>
+                                    <option value="Heard and McDonald Islands">Heard and Mc Donald Islands</option>
+                                    <option value="Holy See">Holy See (Vatican City State)</option>
+                                    <option value="Honduras">Honduras</option>
+                                    <option value="Hong Kong">Hong Kong</option>
+                                    <option value="Hungary">Hungary</option>
+                                    <option value="Iceland">Iceland</option>
+                                    <option value="India">India</option>
+                                    <option value="Indonesia">Indonesia</option>
+                                    <option value="Iran">Iran (Islamic Republic of)</option>
+                                    <option value="Iraq">Iraq</option>
+                                    <option value="Ireland">Ireland</option>
+                                    <option value="Israel">Israel</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Jamaica">Jamaica</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Jordan">Jordan</option>
+                                    <option value="Kazakhstan">Kazakhstan</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="Kiribati">Kiribati</option>
+                                    <option value="Democratic People's Republic of Korea">Korea, Democratic People's
+                                        Republic of</option>
+                                    <option value="Korea">Korea, Republic of</option>
+                                    <option value="Kuwait">Kuwait</option>
+                                    <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                    <option value="Lao">Lao People's Democratic Republic</option>
+                                    <option value="Latvia">Latvia</option>
+                                    <option value="Lebanon">Lebanon</option>
+                                    <option value="Lesotho">Lesotho</option>
+                                    <option value="Liberia">Liberia</option>
+                                    <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                                    <option value="Liechtenstein">Liechtenstein</option>
+                                    <option value="Lithuania">Lithuania</option>
+                                    <option value="Luxembourg">Luxembourg</option>
+                                    <option value="Macau">Macau</option>
+                                    <option value="Macedonia">Macedonia, The Former Yugoslav Republic of</option>
+                                    <option value="Madagascar">Madagascar</option>
+                                    <option value="Malawi">Malawi</option>
+                                    <option value="Malaysia">Malaysia</option>
+                                    <option value="Maldives">Maldives</option>
+                                    <option value="Mali">Mali</option>
+                                    <option value="Malta">Malta</option>
+                                    <option value="Marshall Islands">Marshall Islands</option>
+                                    <option value="Martinique">Martinique</option>
+                                    <option value="Mauritania">Mauritania</option>
+                                    <option value="Mauritius">Mauritius</option>
+                                    <option value="Mayotte">Mayotte</option>
+                                    <option value="Mexico">Mexico</option>
+                                    <option value="Micronesia">Micronesia, Federated States of</option>
+                                    <option value="Moldova">Moldova, Republic of</option>
+                                    <option value="Monaco">Monaco</option>
+                                    <option value="Mongolia">Mongolia</option>
+                                    <option value="Montserrat">Montserrat</option>
+                                    <option value="Morocco">Morocco</option>
+                                    <option value="Mozambique">Mozambique</option>
+                                    <option value="Myanmar">Myanmar</option>
+                                    <option value="Namibia">Namibia</option>
+                                    <option value="Nauru">Nauru</option>
+                                    <option value="Nepal">Nepal</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="Netherlands Antilles">Netherlands Antilles</option>
+                                    <option value="New Caledonia">New Caledonia</option>
+                                    <option value="New Zealand">New Zealand</option>
+                                    <option value="Nicaragua">Nicaragua</option>
+                                    <option value="Niger">Niger</option>
+                                    <option value="Nigeria">Nigeria</option>
+                                    <option value="Niue">Niue</option>
+                                    <option value="Norfolk Island">Norfolk Island</option>
+                                    <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                                    <option value="Norway">Norway</option>
+                                    <option value="Oman">Oman</option>
+                                    <option value="Pakistan">Pakistan</option>
+                                    <option value="Palau">Palau</option>
+                                    <option value="Panama">Panama</option>
+                                    <option value="Papua New Guinea">Papua New Guinea</option>
+                                    <option value="Paraguay">Paraguay</option>
+                                    <option value="Peru">Peru</option>
+                                    <option value="Philippines">Philippines</option>
+                                    <option value="Pitcairn">Pitcairn</option>
+                                    <option value="Poland">Poland</option>
+                                    <option value="Portugal">Portugal</option>
+                                    <option value="Puerto Rico">Puerto Rico</option>
+                                    <option value="Qatar">Qatar</option>
+                                    <option value="Reunion">Reunion</option>
+                                    <option value="Romania">Romania</option>
+                                    <option value="Russia">Russian Federation</option>
+                                    <option value="Rwanda">Rwanda</option>
+                                    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                    <option value="Saint LUCIA">Saint LUCIA</option>
+                                    <option value="Saint Vincent">Saint Vincent and the Grenadines</option>
+                                    <option value="Samoa">Samoa</option>
+                                    <option value="San Marino">San Marino</option>
+                                    <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                    <option value="Saudi Arabia">Saudi Arabia</option>
+                                    <option value="Senegal">Senegal</option>
+                                    <option value="Seychelles">Seychelles</option>
+                                    <option value="Sierra">Sierra Leone</option>
+                                    <option value="Singapore">Singapore</option>
+                                    <option value="Slovakia">Slovakia (Slovak Republic)</option>
+                                    <option value="Slovenia">Slovenia</option>
+                                    <option value="Solomon Islands">Solomon Islands</option>
+                                    <option value="Somalia">Somalia</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="South Georgia">South Georgia and the South Sandwich Islands
+                                    </option>
+                                    <option value="Span">Spain</option>
+                                    <option value="SriLanka">Sri Lanka</option>
+                                    <option value="St. Helena">St. Helena</option>
+                                    <option value="St. Pierre and Miguelon">St. Pierre and Miquelon</option>
+                                    <option value="Sudan">Sudan</option>
+                                    <option value="Suriname">Suriname</option>
+                                    <option value="Svalbard">Svalbard and Jan Mayen Islands</option>
+                                    <option value="Swaziland">Swaziland</option>
+                                    <option value="Sweden">Sweden</option>
+                                    <option value="Switzerland">Switzerland</option>
+                                    <option value="Syria">Syrian Arab Republic</option>
+                                    <option value="Taiwan">Taiwan, Province of China</option>
+                                    <option value="Tajikistan">Tajikistan</option>
+                                    <option value="Tanzania">Tanzania, United Republic of</option>
+                                    <option value="Thailand">Thailand</option>
+                                    <option value="Togo">Togo</option>
+                                    <option value="Tokelau">Tokelau</option>
+                                    <option value="Tonga">Tonga</option>
+                                    <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                    <option value="Tunisia">Tunisia</option>
+                                    <option value="Turkey">Turkey</option>
+                                    <option value="Turkmenistan">Turkmenistan</option>
+                                    <option value="Turks and Caicos">Turks and Caicos Islands</option>
+                                    <option value="Tuvalu">Tuvalu</option>
+                                    <option value="Uganda">Uganda</option>
+                                    <option value="Ukraine">Ukraine</option>
+                                    <option value="United Arab Emirates">United Arab Emirates</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="United States">United States</option>
+                                    <option value="United States Minor Outlying Islands">United States Minor
+                                        Outlying Islands</option>
+                                    <option value="Uruguay">Uruguay</option>
+                                    <option value="Uzbekistan">Uzbekistan</option>
+                                    <option value="Vanuatu">Vanuatu</option>
+                                    <option value="Venezuela">Venezuela</option>
+                                    <option value="Vietnam">Viet Nam</option>
+                                    <option value="Virgin Islands (British)">Virgin Islands (British)</option>
+                                    <option value="Virgin Islands (U.S)">Virgin Islands (U.S.)</option>
+                                    <option value="Wallis and Futana Islands">Wallis and Futuna Islands</option>
+                                    <option value="Western Sahara">Western Sahara</option>
+                                    <option value="Yemen">Yemen</option>
+                                    <option value="Serbia">Serbia</option>
+                                    <option value="Zambia">Zambia</option>
+                                    <option value="Zimbabwe">Zimbabwe</option>
+                                </select>
+                                <span id="err_country"></span>
+                            </div>
+                            <div class="col-lg-12 p-lg-3">
+                                <label class="form-label">State </label>
+                                <select name="state" id="state" class="form-select" value="">
+                                    <option value="select">Select State</option>
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chandigarh">Chandigarh</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                    <option value="Daman and Diu">Daman and Diu</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Lakshadweep">Lakshadweep</option>
+                                    <option value="Puducherry">Puducherry</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="Mizoram">Mizoram</option>
+                                    <option value="Nagaland">Nagaland</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                </select>
+                                <span id="err_state"></span>
+                            </div>
+                            <div class="col-lg-12 p-lg-3">
+                                <label class="form-label">Pincode</label>
+                                <input class="form-control" type="text" name="pcode" value="" onkeypress='return restrictAlphabets(event)' id="pcode"  autocomplete="off">
+                                <span id="err_pcode"></span>
+                            </div>
+                            <div class="col-lg-12 p-lg-3">
+                                <label class="form-label">Permanent Address</label>
+                                <input class="form-control" id="paddress" type="text" name="paddress" value=""  autocomplete="off">
+                                <span id="err_paddress"></span>
+                            </div>
+                            <div class="col-lg-12 p-lg-3">
+                                <label class="form-label">Temporary Address</label>
+                                <input class="form-control" id="taddress" type="text" name="taddress" value=""  autocomplete="off">
+                                <span id="err_taddress"></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div class=" text-center py-3">
+                        <button class="btn  text-white  m-3 " onclick="slide(a='backtofirstslide')" id="tofirst"
+                            style="background-color: rgb(202, 74, 207);">Previous</button>
+                        <button class="btn text-white w-auto m-3" onclick="validateslidesecond();"
+                            style="background-color: rgb(202, 74, 207);">Next</button>
+                    </div>
+                </div>
+                <!--slide 3-->
+                <div class="col-lg-12 d-none" id="third">
+                    <div class="border-1  rounded-1">
+                        <h1 class="text-center fw-bolder pt-3">
+                            Academic Details
+                        </h1>
+                        <div class=" row px-4 pt-4">
+                            <h4>10 <sup>th</sup> details</h4>
+                            <div class="col-lg-5 px-3 pb-2">
+                                <label class="form-label">Year of passing</label>
+                                <input class="form-control" type="text" id="yop" name="yop" value="" maxlength="4"  autocomplete="off" onkeypress='return restrictAlphabets(event)'>
+                                <span id="err_yop"></span>
+                            </div>
+                            <div class="col-lg-7 px-3 pb-2">
+                                <label class="form-label">Board</label>
+                                <input class="form-control" type="text" id="board" name="board"  autocomplete="off" value="">
+                                <span id="err_board"></span>
+                            </div>
+                            <div class="col-lg-5 px-3 pb-2 ">
+                                <label class="form-label">Percentage</label>
+                                <input class="form-control" type="text" id="ptage" name="ptage"  autocomplete="off" value="" maxlength="3" onkeypress='return restrictAlphabets(event)'>
+                                <span id="err_ptage"></span>
+                            </div>
+                            <div class="col-lg-7  px-3 pb-2 ">
+                                <label class="form-label">School</label>
+                                <input class="form-control" type="text" id="school" autocomplete="off" name="school" value="">
+                                <span id="err_school"></span>
+                            </div>
+                            <div class="col-lg-12 p-lg-3">
+                                <label class="form-label">10 <sup>th</sup> Certificate</label>
+                                <input class="form-control" type="file" id="tenc" name="tenc" value="" onchange="change(b='preview');">
+                                <span id="err_tenc"></span>
+                            </div>
+                            <h4 class="pt-4">12 <sup>th</sup> details</h4>
+                            <div class="col-lg-5 px-3 pb-2">
+                                <label class="form-label">Year of passing</label>
+                                <input class="form-control" type="text" id="yop12" name="yop12" value="" maxlength="4" onkeypress='return restrictAlphabets(event)'>
+                                <span id="err_yop12"></span>
+                            </div>
+                            <div class="col-lg-7 px-3 pb-2">
+                                <label class="form-label">Board</label>
+                                <input class="form-control" type="text" id="board12" name="board12" value="">
+                                <span id="err_board12"></span>
+
+                            </div>
+                            <div class="col-lg-5 px-3 pb-2 ">
+                                <label class="form-label">Percentage</label>
+                                <input class="form-control" type="text" id="ptage12" name="ptage12" value="" maxlength="3" onkeypress='return restrictAlphabets(event)'>
+                                <span id="err_ptage12"></span>
+                            </div>
+                            <div class="col-lg-7  px-3 pb-2 ">
+                                <label class="form-label">School</label>
+                                <input class="form-control" type="text" id="school12" name="school12" value="">
+                                <span id="err_school12"></span>
+                            </div>
+                            <div class="col-lg-12 p-lg-3">
+                                <label class="form-label">12 <sup>th</sup> Certificate</label>
+                                <input class="form-control" type="file" id="twelvec" name="twelvec" value="" onchange="change(b='change');">
+                                <span id="err_twelvec"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 text-center">
+                        <button class="btn  text-white w-auto m-3" onclick="slide( a = 'gotosecondSlide');"
+                            style="background-color: rgb(202, 74, 207);">Previous</button>
+                        <button class="btn  text-white w-auto m-3" onclick="validateslidethird();"
+                            style="background-color: rgb(202, 74, 207);">next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+    <!--slide 4-->
+    <div class="row d-none " id="fourth">
+            <div class="display-5 text-center fw-semibold text-white "><u>Edit your details</u></div>
+            <div>
+            <table class="table bg-white text-center table-bordered">
+                <thead>
+                    <h2 class="text-center text-white py-5">Admission Details</h2>
+                    <tr>
+                        <th>Student name</th>
+                        <th>Father's Name</th>
+                        <th>Mother's Name</th>
+                        <th>Gender</th>
+                        <th>Email</th>
+                        <th>Date of Birth</th>
+                        <th>Phone Number</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="tsname"></td>
+                        <td id="tfname"></td>
+                        <td id="tmname"></td>
+                        <td id="tgender"></td>
+                        <td id="temail"></td>
+                        <td id="tdob"></td>
+                        <td id="tphone"></td>
+                        <td >
+                            <button class="btn  text-white w-auto m-3" onclick="slide( a = 'backtofirstslide');"
+                            style="background-color: rgb(202, 74, 207);">Edit <i class="bi bi-pencil-square"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+            <table class="table bg-white text-center table-bordered">
+                <thead>
+                    <h2 class="text-center text-white py-4">Residence Details</h1>
+                    <tr>
+                        <th>Country</th>
+                        <th>State</th>
+                        <th>Pincode</th>
+                        <th>Permanent Address</th>
+                        <th>Temporary Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="tcountry"></td>
+                        <td id="tstate"></td>
+                        <td id="tpcode"></td>
+                        <td id="tpadd"></td>
+                        <td id="ttadd"></td>
+                        <td >
+                            <button class="btn  text-white w-auto m-3" onclick="slide( a = 'gotosecondSlide');"
+                            style="background-color: rgb(202, 74, 207);">Edit <i class="bi bi-pencil-square"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table bg-white text-center table-bordered">
+                <thead>
+                    <h2 class="text-center text-center text-white pt-4 pb-1">Academic Details</h2>
+                    <h4 class="text-white">10 <sup>th</sup> details</h4>
+                    <tr>
+                        <th>Year of passing</th>
+                        <th>Board</th>
+                        <th>Percentage</th>
+                        <th>School</th>
+                        <th>Certificate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="tyop"></td>
+                        <td id="tboard"></td>
+                        <td id="tper"></td>
+                        <td id="tschool"></td>
+                        <td id="" colspan="2">
+                            <img src="" alt="" id="image" width="100px" height="100px">
+                        </td>
+                        <td >
+                            <button class="btn  text-white w-auto m-3" onclick="slide( a = 'gotothirdslide');"
+                            style="background-color: rgb(202, 74, 207);">Edit <i class="bi bi-pencil-square"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+          
+            </table>
+            <table class="table bg-white   text-center   table-bordered">
+                <thead>
+                    <h4 class="text-white">12 <sup>th</sup> details</h4>
+                    <tr>
+                        <th>Year of passing</th>
+                        <th>Board</th>
+                        <th>Percentage</th>
+                        <th>School</th>
+                        <th>Certificate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="tyop12"></td>
+                        <td id="tboard12"></td>
+                        <td id="tper12"></td>
+                        <td id="tschool12"></td>
+                        <td colspan="2">
+                            <img src="" alt="" id="frame" width="100px" height="100px">
+                        </td>
+                        <td >
+                            <button class="btn  text-white w-auto m-3" onclick="slide( a = 'gotothirdslide');"
+                            style="background-color: rgb(202, 74, 207);">Edit <i class="bi bi-pencil-square"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+          
+            </table>
+    </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function validateslidefirst() {
+        var sname = document.getElementById("sname").value;
+        var fname = document.getElementById("fname").value;
+        var mname = document.getElementById("mname").value;
+        var email = document.getElementById("email").value;
+        var mailReg = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        var dob = document.getElementById("dob").value;
+        var phone = document.getElementById("phone").value;
+        var number = phone [0];
+        if (!sname) {
+            document.getElementById("sname").style.border = "2px solid red";
+            document.getElementById("err_sname").innerHTML = "Please Fill this field";
+            document.getElementById("err_sname").style.color = "red";
+            return false;
+        } else {
+            document.getElementById("sname").style.border = "";
+            document.getElementById("err_sname").innerHTML = "";
+
+        }
+         if (!fname) {
+            document.getElementById("fname").style.border = "2px solid red";
+            document.getElementById("err_fname").innerHTML = "Please Fill this field";
+            document.getElementById("err_fname").style.color = "red";
+            return false;
+        } else {
+            document.getElementById("err_fname").innerHTML = "";
+            document.getElementById("fname").style.border = "";
+        }
+        if (!mname) {
+            document.getElementById("mname").style.border = "2px solid red";
+            document.getElementById("err_mname").innerHTML = "Please Fill this field";
+            document.getElementById("err_mname").style.color = "red";
+            return false;
+        } else {
+            document.getElementById("mname").style.border = "";
+            document.getElementById("err_mname").innerHTML = "";
+        }
+        if(document.getElementById("Male").checked == false &&
+          document.getElementById("Female").checked == false &&
+          document.getElementById("Other").checked == false)
+        {
+            document.getElementById("err_gender").innerHTML="<br>Please Select The Gender";
+            document.getElementById("err_gender").style.color = "red";
+            return false;
+        }
+        else{
+            document.getElementById("err_gender").innerHTML="";
+        }
+        if (!email) {
+            document.getElementById("email").style.border = "2px solid red";
+            document.getElementById("err_email").innerHTML = "Please Fill this field";
+            document.getElementById("err_email").style.color = "red";
+            return false;
+        }
+        else if (!mailReg.test(email)) {
+            document.getElementById("err_email").innerHTML = "mail not in format";
+            document.getElementById("email").style.border = "red 1px solid";
+            document.getElementById("err_email").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("email").style.border = "";
+            document.getElementById("err_email").innerHTML = "";
+        }
+        if (!dob) {
+            document.getElementById("dob").style.border = "2px solid red";
+            document.getElementById("err_dob").innerHTML = "Please Fill this field";
+            document.getElementById("err_dob").style.color = "red";
+            return false;
+        } else {
+            document.getElementById("dob").style.border = "";
+            document.getElementById("err_dob").innerHTML = "";
+        }
+        if (!phone) {
+            document.getElementById("phone").style.border = "2px solid red";
+            document.getElementById("err_phone").innerHTML = "Please Fill this field";
+            document.getElementById("err_phone").style.color = "red";
+            return false;
+        }
+        else if (phone.length > 10 || phone.length < 10 ) {
+            document.getElementById("err_phone").innerHTML = "only 10 digit allowed !!";
+            document.getElementById("phone").style.border = "red 1px solid";
+            document.getElementById("err_phone").style.color = "red";
+            return false;
+        }
+        else if (number<=6){
+            document.getElementById("phone").style.border = "2px solid red";
+            document.getElementById("err_phone").innerHTML = "first digit must be greater than 6.";
+            document.getElementById("err_phone").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("phone").style.border = "";
+            document.getElementById("err_phone").innerHTML = "";
+            slide(a = 'gotosecondSlide');
+        }
+    }
+    function validateslidesecond() {
+        var country = document.getElementById("country").value;
+        var state = document.getElementById("state").value;
+        var pcode = document.getElementById("pcode").value;
+        var paddress = document.getElementById("paddress").value;
+        var taddress = document.getElementById("taddress").value;
+
+        if (country == "select") {
+            document.getElementById("country").style.border = "2px solid red";
+            document.getElementById("err_country").innerHTML = "Select Country";
+            document.getElementById("err_country").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("country").style.border = "";
+            document.getElementById("err_country").innerHTML = "";
+        }
+        if (state == "select") {
+            document.getElementById("state").style.border = "2px solid red";
+            document.getElementById("err_state").innerHTML = "Select State";
+            document.getElementById("err_state").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("state").style.border = "";
+            document.getElementById("err_state").innerHTML = "";
+        }
+        if (!pcode) {
+            document.getElementById("pcode").style.border = "2px solid red";
+            document.getElementById("err_pcode").innerHTML = "Please fill this field";
+            document.getElementById("err_pcode").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("pcode").style.border = "";
+            document.getElementById("err_pcode").innerHTML = "";
+        }
+        if (!paddress) {
+            document.getElementById("paddress").style.border = "2px solid red";
+            document.getElementById("err_paddress").innerHTML = "Please fill this field";
+            document.getElementById("err_paddress").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("paddress").style.border = "";
+            document.getElementById("err_paddress").innerHTML = "";
+        }
+        if (!taddress) {
+            document.getElementById("taddress").style.border = "2px solid red";
+            document.getElementById("err_taddress").innerHTML = "Please fill this field";
+            document.getElementById("err_taddress").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("taddress").style.border = "";
+            document.getElementById("err_taddress").innerHTML = "";
+            slide(a = 'gotothirdslide');
+        }
+    }
+    function validateslidethird() {
+        var yop = document.getElementById("yop").value;
+        var board = document.getElementById("board").value;
+        var ptage = document.getElementById("ptage").value;
+        var school = document.getElementById("school").value;
+        var tenc = document.getElementById("tenc").value;
+        var yop12 = document.getElementById("yop12").value;
+        var board12 = document.getElementById("board12").value;
+        var ptage12 = document.getElementById("ptage12").value;
+        var school12 = document.getElementById("school12").value;
+        var twelvec = document.getElementById("twelvec").value;
+        if (!yop) {
+            document.getElementById("yop").style.border = "2px solid red";
+            document.getElementById("err_yop").innerHTML = " Fill this field";
+            document.getElementById("err_yop").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("yop").style.border = "";
+            document.getElementById("err_yop").innerHTML = "";
+        }
+        if (!board) {
+            document.getElementById("board").style.border = "2px solid red";
+            document.getElementById("err_board").innerHTML = " Fill this field";
+            document.getElementById("err_board").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("board").style.border = "";
+            document.getElementById("err_board").innerHTML = "";
+        }
+        if (!ptage) {
+            document.getElementById("ptage").style.border = "2px solid red";
+            document.getElementById("err_ptage").innerHTML = " Fill this field";
+            document.getElementById("err_ptage").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("ptage").style.border = "";
+            document.getElementById("err_ptage").innerHTML = "";
+        }
+        if (!school) {
+            document.getElementById("school").style.border = "2px solid red";
+            document.getElementById("err_school").innerHTML = " Fill this field";
+            document.getElementById("err_school").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("school").style.border = "";
+            document.getElementById("err_school").innerHTML = "";
+        }
+        if (!tenc) {
+            document.getElementById("tenc").style.border = "2px solid red";
+            document.getElementById("err_tenc").innerHTML = "Upload your file";
+            document.getElementById("err_tenc").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("tenc").style.border = "";
+            document.getElementById("err_tenc").innerHTML = "";
+        }
+        if (!yop12) {
+            document.getElementById("yop12").style.border = "2px solid red";
+            document.getElementById("err_yop12").innerHTML = " Fill this field";
+            document.getElementById("err_yop12").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("yop12").style.border = "";
+            document.getElementById("err_yop12").innerHTML = "";
+        }
+        if (!board12) {
+            document.getElementById("board12").style.border = "2px solid red";
+            document.getElementById("err_board12").innerHTML = " Fill this field";
+            document.getElementById("err_board12").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("board12").style.border = "";
+            document.getElementById("err_board12").innerHTML = "";
+        }
+        if (!ptage12) {
+            document.getElementById("ptage12").style.border = "2px solid red";
+            document.getElementById("err_ptage12").innerHTML = " Fill this field";
+            document.getElementById("err_ptage12").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("ptage12").style.border = "";
+            document.getElementById("err_ptage12").innerHTML = "";
+        }
+        if (!school12) {
+            document.getElementById("school12").style.border = "2px solid red";
+            document.getElementById("err_school12").innerHTML = "Please fill this field";
+            document.getElementById("err_school12").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("school12").style.border = "";
+            document.getElementById("err_school12").innerHTML = "";
+        }
+        if (!twelvec) {
+            document.getElementById("twelvec").style.border = "2px solid red";
+            document.getElementById("err_twelvec").innerHTML = "Upload your file";
+            document.getElementById("err_tenc").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("twelvec").style.border = "";
+            document.getElementById("err_twelvec").innerHTML = "";
+            slide(a = 'gotofourthslide');
+            tablevalidate();
+        }
+    }
+    function tablevalidate()
+    {
+      var tsname=document.getElementById("sname").value;
+      var tfname=document.getElementById("fname").value;
+      var tmname=document.getElementById("mname").value;
+      var male=document.getElementById("Male").value; 
+      var female=document.getElementById("Female").value; 
+      var other=document.getElementById("Other").value;
+      var temail=document.getElementById("email").value;
+      var tdob=document.getElementById("dob").value;
+      var tphone=document.getElementById("phone").value;
+      var tcountry=document.getElementById("country").value;
+      var tstate=document.getElementById("state").value;
+      var tpcode=document.getElementById("pcode").value;
+      var tpadd=document.getElementById("paddress").value;
+      var ttadd=document.getElementById("taddress").value;
+      var tyop=document.getElementById("yop").value;
+      var tboard=document.getElementById("board").value;
+      var tper=document.getElementById("ptage").value;
+      var tschool=document.getElementById("school").value;
+      var tyop12=document.getElementById("yop12").value;
+      var tboard12=document.getElementById("board12").value;
+      var tper12=document.getElementById("ptage12").value;
+      var tschool12=document.getElementById("school12").value;
+    
+      document.getElementById("tsname").innerHTML=tsname;
+      document.getElementById("tfname").innerHTML=tfname;
+      document.getElementById("tmname").innerHTML=tmname;
+      if(document.getElementById("Male").checked == true &&
+          document.getElementById("Female").checked == false &&
+          document.getElementById("Other").checked == false)
+          {
+            document.getElementById("tgender").innerHTML=male;
+          }
+        else  if(document.getElementById("Male").checked == false &&
+          document.getElementById("Female").checked == true &&
+          document.getElementById("Other").checked == false)
+          {
+            document.getElementById("tgender").innerHTML=female;
+          }
+          else  if(document.getElementById("Male").checked == false &&
+          document.getElementById("Female").checked == false &&
+          document.getElementById("Other").checked == true)
+          {
+            document.getElementById("tgender").innerHTML=other;
+          }
+      document.getElementById("temail").innerHTML=temail;
+      document.getElementById("tdob").innerHTML=tdob;
+      document.getElementById("tphone").innerHTML=tphone;
+      document.getElementById("tcountry").innerHTML=tcountry;
+      document.getElementById("tstate").innerHTML=tstate;
+      document.getElementById("tpcode").innerHTML=tpcode;
+      document.getElementById("tpadd").innerHTML=tpadd;
+      document.getElementById("ttadd").innerHTML=ttadd;
+      document.getElementById("tyop").innerHTML=tyop;
+      document.getElementById("tboard").innerHTML=tboard;
+      document.getElementById("tper").innerHTML=tper;
+      document.getElementById("tschool").innerHTML=tschool;
+      document.getElementById("tyop12").innerHTML=tyop12;
+      document.getElementById("tboard12").innerHTML=tboard12;
+      document.getElementById("tper12").innerHTML=tper12;
+      document.getElementById("tschool12").innerHTML=tschool12;
+     
+    }
+    function restrictAlphabets(e) {
+             var x = e.which || e.keycode;
+             if ((x >= 48 && x <= 57))
+                 return true;
+             else
+                 return false;
+         }
+    function slide(a) {
+        if (a == 'gotosecondSlide') {
+            document.getElementById("first").classList.add("d-none");
+            document.getElementById("second").classList.remove("d-none");
+            document.getElementById("third").classList.add("d-none");
+            document.getElementById("fourth").classList.add("d-none");
+        } else if (a == "backtofirstslide") {
+            document.getElementById("first").classList.remove("d-none");
+            document.getElementById("second").classList.add("d-none");
+            document.getElementById("third").classList.add("d-none");
+            document.getElementById("fourth").classList.add("d-none");
+        }
+        else if (a == "gotothirdslide") {
+            document.getElementById("first").classList.add("d-none");
+            document.getElementById("second").classList.add("d-none");
+            document.getElementById("third").classList.remove("d-none");
+            document.getElementById("fourth").classList.add("d-none");
+        }
+        else if (a == 'gotofourthslide') {
+            document.getElementById("first").classList.add("d-none");
+            document.getElementById("second").classList.add("d-none");
+            document.getElementById("third").classList.add("d-none");
+            document.getElementById("fourth").classList.remove("d-none");
+        }
+    }
+    function change()
+    {
+        if(b=="preview")
+        {
+            frame.src=URL.createObjectURL(event.target.files[0]);
+        }
+        else if(b=="change")
+        {
+        image.src=URL.createObjectURL(event.target.files[0]);
+        }
+    }
+</script>
+
+</html>

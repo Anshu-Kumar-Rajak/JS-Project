@@ -1,0 +1,39 @@
+body{
+    background-color: aquamarine;
+}
+.container{
+    text-align: center;
+}
+.game-container{
+    display: flex;
+    width: 300px;
+    margin: auto auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    gap: 5px;
+
+}
+.box{
+    width: 85px;
+    height: 85px;
+    background-color:#ffffc7;
+    border-radius: 0.8rem;
+    font-size: 2rem;
+    font-weight: normal;
+    color: black;
+    border:1px solid black
+}
+.win-msg{
+    display: none;
+}
+.reset{
+    background-color: black;
+    padding: 13px 42px;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius:15px;
+    margin: 1rem 0;
+}

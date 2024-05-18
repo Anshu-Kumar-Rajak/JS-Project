@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <main>
+        <div class="cal_container">
+            <input type="text" readonly id="input_value">
+            <div class="button_container">
+                <button class="button" onclick="currentValue='';input_value();">C</button>
+                <button class="button" onclick="currentValue+='1'; input_value();">1</button>
+                <button class="button" onclick="currentValue+='2'; input_value();">2</button>
+                <button class="button" onclick="currentValue+='+'; input_value();">+</button>
+                <button class="button" onclick="currentValue+='3'; input_value();">3</button>
+                <button class="button" onclick="currentValue+='4'; input_value();">4</button>
+                <button class="button" onclick="currentValue+='-'; input_value();">-</button>
+                <button class="button" onclick="currentValue+='5'; input_value();">5</button>
+                <button class="button" onclick="currentValue+='6'; input_value();">6</button>
+                <button class="button" onclick="currentValue+='*'; input_value();">*</button>
+                <button class="button" onclick="currentValue+='7'; input_value();">7</button>
+                <button class="button" onclick="currentValue+='8'; input_value();">8</button>
+                <button class="button" onclick="currentValue+='/'; input_value();">/</button>
+                <button class="button" onclick="let result=eval(currentValue); document.querySelector('#input_value').value=result">=</button>
+                <button class="button" onclick="currentValue+='9'; input_value();">9 </button>
+                <button class="button" onclick="currentValue+='0'; input_value();">0</button>
+            </div>
+        </div>
+    </main>
+    <script>
+       let currentValue='';
+       function input_value(){
+       document.querySelector('#input_value').value=currentValue;
+       }
+    </script>
+</body>
+</html>

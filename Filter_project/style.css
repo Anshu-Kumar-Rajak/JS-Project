@@ -1,0 +1,169 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
+    padding: 1rem;
+    background-color: rgb(253, 249, 249);
+}
+
+input {
+    padding: 1rem;
+    outline: none;
+    margin: 1rem 0;
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid #e0e0e0;
+}
+
+.products_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.product {
+    /* width: 300px; */
+    width: 32%;
+    margin-bottom: 2rem;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+.image {
+    width: 90%;
+    height: 300px;
+    margin: 0 auto;
+    display: block;
+    /* object-fit: contain; */
+    mix-blend-mode: darken;
+}
+
+.rating {
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #282c3f;
+    margin-top: 10px;
+}
+
+.title {
+    font-weight: bold;
+    color: #282c3f;
+    margin: 0.8rem 0 0.4rem 0;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    color: #535766;
+    line-height: 1.5;
+}
+
+.price {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #282c3f;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.category {
+    color: #535766;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.btn-container {
+    text-align: center;
+    display: none;
+}
+
+.load-btn {
+    padding: 13px 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    background-color: white;
+    color: #282c3f;;
+    font-weight: bold;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    margin: auto;
+    transition: all .5s ease-in;
+}
+
+.load-btn:hover {
+    background-color: red;
+    color: white;
+    /* transition: all 1s ease-in; */
+    border: 1px solid red;
+}
+
+.loading {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 16px solid #ccccccb9;
+    border-top: 16px solid rgb(233, 2, 2);
+    animation: spin 2s infinite;
+    margin: auto;
+
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-text {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    text-align: center;
+    color: #282c3f;
+}
+
+.goto-top {
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 2.1;
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+
+}
+
+.read {
+    color: rgb(8, 50, 189);
+    cursor: pointer;
+}
+
+.read-more {
+    text-overflow: initial;
+    white-space: normal;
+    height: auto;
+}
